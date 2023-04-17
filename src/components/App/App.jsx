@@ -10,14 +10,9 @@ export class App extends Component {
         bad: 0,
     };
 
-    onGood = () => {
-        this.setState(state => ({ good: this.state.good + 1 }));
-    };
-    onNeutral = () => {
-        this.setState(state => ({ neutral: this.state.neutral + 1 }));
-    };
-    onBad = () => {
-        this.setState(state => ({ bad: this.state.bad + 1 }));
+    onLeaveFeedback = e => {
+        const option = e.target.textContent;
+        this.setState(state => ({ [option]: this.state[option] + 1 }));
     };
 
     render() {
@@ -25,9 +20,8 @@ export class App extends Component {
             <React.Fragment>
                 <Section title="Please leave feedback">
                     <Feedback
-                        onBtnGood={this.onGood}
-                        onBtnNeutral={this.onNeutral}
-                        onBtnBad={this.onBad}
+                        options={Object.keys(this.state)}
+                        onLeaveFeedback={this.onLeaveFeedback}
                     ></Feedback>
                 </Section>
                 <Section title="Statistics">

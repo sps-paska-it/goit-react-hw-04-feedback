@@ -6,5 +6,6 @@ export const StyledSection = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: 10px;
+    font-size: 30px;
+    padding-bottom: 10px;
 `;

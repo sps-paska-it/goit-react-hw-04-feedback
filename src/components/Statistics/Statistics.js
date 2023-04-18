@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Notification } from './Notificatoin';
 import { StatisticsStyle } from './Statistics.styled';
 
@@ -26,3 +27,9 @@ export class Statistics extends React.Component {
         );
     }
 }
+
+Statistics.propTypes = {
+    valueGood: PropTypes.number.isRequired,
+    valueNeutral: PropTypes.number.isRequired,
+    valueBad: PropTypes.number.isRequired,
+};

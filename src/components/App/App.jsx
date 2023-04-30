@@ -15,10 +15,20 @@ export const App = () => {
     const positiveFeedbackPercentage = () =>
         (good / countTotalFeedback()) * 100;
 
-    const leaveFeedback = e => {
-        if (e.target.textContent === options[0]) setGood(state => state + 1);
-        if (e.target.textContent === options[1]) setNeutral(state => state + 1);
-        if (e.target.textContent === options[2]) setBad(state => state + 1);
+    const leaveFeedback = option => {
+        switch (option) {
+            case options[0]:
+                setGood(state => state + 1);
+                break;
+            case options[1]:
+                setNeutral(state => state + 1);
+                break;
+            case options[2]:
+                setBad(state => state + 1);
+                break;
+            default:
+                break;
+        }
     };
     return (
         <>
